@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Node.js cartridge for OpenShift</title>
+  <script src="cs.js"></script>
+  <script>
+  function go() {
+	cs.get('/test', function(data) {
+		console.log(data);
+	});
+  }
+  </script>
+</head>
+<body>
+	<button onclick="go()">GO!</button>
+</body>
+</html>

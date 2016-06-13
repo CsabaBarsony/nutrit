@@ -4,6 +4,28 @@ const http         = require('http'),
       contentTypes = require('./utils/content-types'),
       sysInfo      = require('./utils/sys-info'),
       env          = process.env;
+	  
+var mysql = require('mysql');
+var db;
+
+if(env.NODE_IP === 'localhost') {
+	db = mysql.createConnection({
+		host: 'localhost',
+		user: 'root',
+		password: '',
+		database: 'paleoketo'
+	});
+}
+else {
+	db = mysql.createConnection({
+		host: '127.7.69.130',
+		user: 'adminQKzlKgB',
+		password: 'Z4e96cERn3P2',
+		database: 'nutrit'
+	});
+} 
+
+db.connect();
 
 let server = http.createServer(function (req, res) {
   let url = req.url;
@@ -21,8 +43,14 @@ let server = http.createServer(function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Cache-Control', 'no-cache, no-store');
     res.end(JSON.stringify(sysInfo[url.slice(6)]()));
-  } else {
-    fs.readFile('./static' + url, function (err, data) {
+  }
+  else if(url === '/test') {
+	res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Cache-Control', 'no-cache, no-store');
+    res.end(JSON.stringify({ name: 'Csati' }));
+  }
+  else {
+    fs.readFile('./public' + url, function (err, data) {
       if (err) {
         res.writeHead(404);
         res.end();
