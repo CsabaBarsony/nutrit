@@ -8,7 +8,7 @@ const http         = require('http'),
 var mysql = require('mysql');
 var db;
 
-if(env.NODE_IP === 'localhost') {
+if(!env.NODE_IP) {
 	db = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
@@ -44,7 +44,8 @@ let server = http.createServer(function (req, res) {
     res.setHeader('Cache-Control', 'no-cache, no-store');
     res.end(JSON.stringify(sysInfo[url.slice(6)]()));
   }
-  else if(url === '/test') {
+  else if(/foods/.test(url)) {
+	  console.log(req)
 	res.setHeader('Content-Type', 'application/json');
     res.setHeader('Cache-Control', 'no-cache, no-store');
     res.end(JSON.stringify({ name: 'Csati' }));

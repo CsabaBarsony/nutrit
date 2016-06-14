@@ -6,13 +6,15 @@
   <script src="cs.js"></script>
   <script>
   function go() {
-	cs.get('/test', function(data) {
+	cs.get('/foods', function(status, data) {
+		console.log(status);
 		console.log(data);
 	});
   }
   </script>
 </head>
 <body>
+	<h1 style="">majom</h1>
 	<button onclick="go()">GO!</button>
 </body>
 </html>
