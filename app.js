@@ -50,7 +50,7 @@ let server = http.createServer(function (req, res) {
 	  if(captures && captures.length > 1) id = captures[1];
 	  
 	  if(id) {
-			  db.query('select * from nutrients where category = \'' + id + '\'', function(err, rows) {
+			  db.query('select * from nutrients where food_group_id = \'' + id + '\'', function(err, rows) {
 				  res.setHeader('Content-Type', 'application/json');
 					res.setHeader('Cache-Control', 'no-cache, no-store');
 				if(!err) {
