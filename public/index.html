@@ -6,7 +6,7 @@
   <script src="cs.js"></script>
   <script>
   function go() {
-	cs.get('/foods', function(status, data) {
+	cs.get('/foods?id=egg', function(status, data) {
 		console.log(status);
 		console.log(data);
 	});

@@ -45,10 +45,22 @@ let server = http.createServer(function (req, res) {
     res.end(JSON.stringify(sysInfo[url.slice(6)]()));
   }
   else if(/foods/.test(url)) {
-	  console.log(req)
-	res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Cache-Control', 'no-cache, no-store');
-    res.end(JSON.stringify({ name: 'Csati' }));
+	  var captures = url.match(/\?id=([^&]*)/);
+	  var id = '';
+	  if(captures && captures.length > 1) id = captures[1];
+	  
+	  if(id) {
+			  db.query('select * from nutrients where category = \'' + id + '\'', function(err, rows) {
+				  res.setHeader('Content-Type', 'application/json');
+					res.setHeader('Cache-Control', 'no-cache, no-store');
+				if(!err) {
+					res.end(JSON.stringify(rows));
+				}
+				else {
+					res.end('mysql error');
+				}
+			});
+	  }	
   }
   else {
     fs.readFile('./public' + url, function (err, data) {
