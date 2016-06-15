@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Node.js cartridge for OpenShift</title>
+  <script src="cs.js"></script>
+  <script>
+  function go() {
+	cs.get('/foods?id=egg', function(status, data) {
+		console.log(status);
+		console.log(data);
+	});
+  }
+  </script>
+</head>
+<body>
+	<h1 style="">majom</h1>
+	<button onclick="go()">GO!</button>
+</body>
+</html>
