@@ -369,7 +369,7 @@ var HomePage = React.createClass({
 	getNutrientData: function getNutrientData(foodGroup) {
 		var _this3 = this;
 
-		cs.get('/foods/' + foodGroup, function (status, foods) {
+		cs.get('/foods?id=' + foodGroup, function (status, foods) {
 			_this3.setState({ status: 'ready', foods: foods });
 		});
 	}
