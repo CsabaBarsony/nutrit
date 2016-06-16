@@ -1,3 +1,5 @@
+'use strict'
+
 const http         = require('http'),
       fs           = require('fs'),
       path         = require('path'),
@@ -6,6 +8,7 @@ const http         = require('http'),
       env          = process.env;
 	  
 var mysql = require('mysql');
+var urlParser = require('url');
 var db;
 
 if(!env.NODE_IP) {
@@ -44,7 +47,7 @@ let server = http.createServer(function (req, res) {
     res.setHeader('Cache-Control', 'no-cache, no-store');
     res.end(JSON.stringify(sysInfo[url.slice(6)]()));
   }
-  else if(/foods/.test(url)) {
+  else if(/getfoods/.test(url)) {
 	  var captures = url.match(/\?id=([^&]*)/);
 	  var id = '';
 	  if(captures && captures.length > 1) id = captures[1];
@@ -61,6 +64,27 @@ let server = http.createServer(function (req, res) {
 				}
 			});
 	  }	
+  }
+  else if(/postfood/.test(url)) {
+	  var queryData = urlParser.parse(url, true).query;
+	  
+	  db.query('UPDATE `nutrients` SET' +
+		'  `name` = \'' 					+ queryData.name +
+		'\', `description` = \'' 			+ queryData.description +
+		'\', `category` = \'' 				+ queryData.category +
+		'\', `paleo` = \'' 					+ queryData.paleo +
+		'\', `keto` = \'' 					+ queryData.keto +
+		'\', `enabled` = \'' 				+ (queryData.enabled ? 1 : 0) +
+		'\' WHERE `nutrients`.`id` = ' 		+ queryData.id +
+		';', function(err) {
+		if(err) {
+			console.log(err);
+			res.end('mysql error');
+		}
+		else {
+			res.end(JSON.stringify());
+		}
+	});
   }
   else {
     fs.readFile('./public' + url, function (err, data) {
@@ -79,6 +103,6 @@ let server = http.createServer(function (req, res) {
   }
 });
 
-server.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function () {
+server.listen(env.NODE_PORT || 3001, env.NODE_IP || 'localhost', function () {
   console.log(`Application worker ${process.pid} started...`);
 });
