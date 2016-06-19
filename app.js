@@ -31,6 +31,7 @@ else {
 db.connect();
 
 let server = http.createServer(function (req, res) {
+	console.log(req);
   let url = req.url;
   if (url == '/') {
     url += 'index.html';
