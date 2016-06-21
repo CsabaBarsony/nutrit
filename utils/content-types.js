@@ -5,5 +5,6 @@ module.exports = {
   'ico'  : 'image/x-icon',
   'png'  : 'image/png',
   'svg'  : 'image/svg+xml',
-  'js'	 : 'text/javascript'
+  'js'	 : 'text/javascript',
+	'woff': 'application/woff'
 }

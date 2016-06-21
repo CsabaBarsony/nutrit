@@ -82,7 +82,7 @@ var FoodSelector = React.createClass({
 			});
 		}
 		else {
-			cs.get('/foods/' + selectedCategory.id, (status, foods) => {
+			cs.get('/getfoods?id=' + selectedCategory.id, (status, foods) => {
 				if(status === 200) {
 					this.setState({
 						selectedFoodCategory: selectedCategory,
