@@ -31,7 +31,6 @@ else {
 db.connect();
 
 let server = http.createServer(function (req, res) {
-	console.log(req);
   let url = req.url;
   if (url == '/') {
     url += 'index.html';
@@ -69,6 +68,7 @@ let server = http.createServer(function (req, res) {
   else if(/postfood/.test(url)) {
 	  var queryData = urlParser.parse(url, true).query;
 	  
+	  
 	  db.query('UPDATE `nutrients` SET' +
 		'  `name` = \'' 					+ queryData.name +
 		'\', `description` = \'' 			+ queryData.description +
@@ -78,6 +78,9 @@ let server = http.createServer(function (req, res) {
 		'\', `enabled` = \'' 				+ (queryData.enabled ? 1 : 0) +
 		'\' WHERE `nutrients`.`id` = ' 		+ queryData.id +
 		';', function(err) {
+			res.setHeader('Content-Type', 'application/json');
+			res.setHeader('Cache-Control', 'no-cache, no-store');
+			
 		if(err) {
 			console.log(err);
 			res.end('mysql error');

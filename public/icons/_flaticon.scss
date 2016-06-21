@@ -1,0 +1,127 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 11/06/2016 13:05
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-add:before { content: "\f100"; }
+.flaticon-alcoholic:before { content: "\f101"; }
+.flaticon-baked:before { content: "\f102"; }
+.flaticon-beef:before { content: "\f103"; }
+.flaticon-beer:before { content: "\f104"; }
+.flaticon-beverages:before { content: "\f105"; }
+.flaticon-boar:before { content: "\f106"; }
+.flaticon-carb:before { content: "\f107"; }
+.flaticon-cereal:before { content: "\f108"; }
+.flaticon-cereal-1:before { content: "\f109"; }
+.flaticon-chicken:before { content: "\f10a"; }
+.flaticon-coffee:before { content: "\f10b"; }
+.flaticon-dairy:before { content: "\f10c"; }
+.flaticon-dairyandegg:before { content: "\f10d"; }
+.flaticon-deer:before { content: "\f10e"; }
+.flaticon-distilled:before { content: "\f10f"; }
+.flaticon-duck:before { content: "\f110"; }
+.flaticon-egg:before { content: "\f111"; }
+.flaticon-fat:before { content: "\f112"; }
+.flaticon-fats:before { content: "\f113"; }
+.flaticon-fatsandoils:before { content: "\f114"; }
+.flaticon-food:before { content: "\f115"; }
+.flaticon-fruits:before { content: "\f116"; }
+.flaticon-game:before { content: "\f117"; }
+.flaticon-goat:before { content: "\f118"; }
+.flaticon-goose:before { content: "\f119"; }
+.flaticon-grainbaked:before { content: "\f11a"; }
+.flaticon-lamb:before { content: "\f11b"; }
+.flaticon-legumes:before { content: "\f11c"; }
+.flaticon-liquor:before { content: "\f11d"; }
+.flaticon-meat:before { content: "\f11e"; }
+.flaticon-nuts:before { content: "\f11f"; }
+.flaticon-pork:before { content: "\f120"; }
+.flaticon-poultry:before { content: "\f121"; }
+.flaticon-previous:before { content: "\f122"; }
+.flaticon-protein:before { content: "\f123"; }
+.flaticon-rabbit:before { content: "\f124"; }
+.flaticon-refresh:before { content: "\f125"; }
+.flaticon-remove:before { content: "\f126"; }
+.flaticon-spices:before { content: "\f127"; }
+.flaticon-tea:before { content: "\f128"; }
+.flaticon-turkey:before { content: "\f129"; }
+.flaticon-vegetables:before { content: "\f12a"; }
+.flaticon-wine:before { content: "\f12b"; }
+    
+    $font-Flaticon-add: "\f100";
+    $font-Flaticon-alcoholic: "\f101";
+    $font-Flaticon-baked: "\f102";
+    $font-Flaticon-beef: "\f103";
+    $font-Flaticon-beer: "\f104";
+    $font-Flaticon-beverages: "\f105";
+    $font-Flaticon-boar: "\f106";
+    $font-Flaticon-carb: "\f107";
+    $font-Flaticon-cereal: "\f108";
+    $font-Flaticon-cereal-1: "\f109";
+    $font-Flaticon-chicken: "\f10a";
+    $font-Flaticon-coffee: "\f10b";
+    $font-Flaticon-dairy: "\f10c";
+    $font-Flaticon-dairyandegg: "\f10d";
+    $font-Flaticon-deer: "\f10e";
+    $font-Flaticon-distilled: "\f10f";
+    $font-Flaticon-duck: "\f110";
+    $font-Flaticon-egg: "\f111";
+    $font-Flaticon-fat: "\f112";
+    $font-Flaticon-fats: "\f113";
+    $font-Flaticon-fatsandoils: "\f114";
+    $font-Flaticon-food: "\f115";
+    $font-Flaticon-fruits: "\f116";
+    $font-Flaticon-game: "\f117";
+    $font-Flaticon-goat: "\f118";
+    $font-Flaticon-goose: "\f119";
+    $font-Flaticon-grainbaked: "\f11a";
+    $font-Flaticon-lamb: "\f11b";
+    $font-Flaticon-legumes: "\f11c";
+    $font-Flaticon-liquor: "\f11d";
+    $font-Flaticon-meat: "\f11e";
+    $font-Flaticon-nuts: "\f11f";
+    $font-Flaticon-pork: "\f120";
+    $font-Flaticon-poultry: "\f121";
+    $font-Flaticon-previous: "\f122";
+    $font-Flaticon-protein: "\f123";
+    $font-Flaticon-rabbit: "\f124";
+    $font-Flaticon-refresh: "\f125";
+    $font-Flaticon-remove: "\f126";
+    $font-Flaticon-spices: "\f127";
+    $font-Flaticon-tea: "\f128";
+    $font-Flaticon-turkey: "\f129";
+    $font-Flaticon-vegetables: "\f12a";
+    $font-Flaticon-wine: "\f12b";
