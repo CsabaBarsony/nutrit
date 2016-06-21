@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var babelify = require('babelify');
 var _ = require('lodash');
-//var jasmine = require('gulp-jasmine');
 
 var sources = [
 	'./src/scripts/components/food_selector/food_selector.js',
@@ -11,18 +10,27 @@ var sources = [
 	'./src/scripts/components/publisher/publisher.js'
 ];
 
+function handleError(error) {
+	console.error('Error:');
+	console.error(error.filename);
+	console.error(error.loc);
+	this.emit('end');
+}
+
 function compile() {
 	_.each(sources, function(s) {
 		var fileName = s.match(/[^\/]*\.js/)[0];
 
 		browserify(s, { debug: true })
 			.transform('babelify', { presets: ['es2015', 'react'], sourceMaps: false })
+			.on('error', handleError)
 			.bundle()
+			.on('error', handleError)
 			.pipe(source(fileName))
-			.pipe(gulp.dest('./public/js/'));
+			.on('error', handleError)
+			.pipe(gulp.dest('./public/js/'))
+			.on('error', handleError);
 	});
-	
-	//gulp.src('spec/test.js').pipe(jasmine);
 }
 
 gulp.task('compile', function() {

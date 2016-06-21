@@ -120,3 +120,9 @@ footer > div {
 	width: 150px;
 	float: right;
 }
+
+.component-cont {
+	padding: 10px 0;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
