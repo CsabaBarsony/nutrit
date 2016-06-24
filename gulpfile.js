@@ -5,8 +5,10 @@ var babelify = require('babelify');
 var _ = require('lodash');
 
 var sources = [
+	'./src/scripts/pages/nutrit/nutrit.js',
 	'./src/scripts/components/food_selector/food_selector.js',
 	'./src/scripts/components/ingredient_list/ingredient_list.js',
+	'./src/scripts/components/pie/pie.js',
 	'./src/scripts/components/publisher/publisher.js'
 ];
 

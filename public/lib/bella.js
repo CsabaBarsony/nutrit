@@ -30,10 +30,6 @@ var bella = (function() {
 			set: function(value, emitter) {
 				_.merge(dataStore[dataName].data, value);
 				dataStore[dataName].callbacks.forEach((callback) => callback(dataStore[dataName].data, emitter));
-				
-				if(DEVELOPMENT_MODE){
-					console.log('SET: ', dataStore[dataName]);
-				}
 			},
 			subscribe: function(callback) {
 				dataStore[dataName].callbacks.push(callback);

@@ -32,5 +32,5 @@ var Publisher = React.createClass({
 
 ReactDOM.render(
 	<Publisher />,
-	document.getElementById('publisher-cont')
+	document.getElementById('cont-publisher')
 );

@@ -1,6 +1,7 @@
-var Utils = require('./ingredient_list_utils.js');
+var Utils	= require('./ingredient_list_utils.js');
+var Pie		= require('../../components/pie/pie.js');
 
-var IngredientList = {
+var IngredientList = React.createClass({
 	getInitialState: function() {
 		return {
 			ingredients: [],
@@ -47,23 +48,13 @@ var IngredientList = {
 		ingredients.splice(key, 1);
 		bella.data.ingredients.set(ingredients);
 	}
-};
-
-var Pie = React.createClass({
-	render: function() {
-		return (
-			<div className="pie">
-				<div className="pie-segment">a</div>
-				<div className="pie-segment">b</div>
-				<div className="pie-segment">c</div>
-			</div>
-		);
-	}
 });
 
-var IngredientListComponent = React.createClass(IngredientList);
+module.exports = IngredientList;
 
-ReactDOM.render(
-	<IngredientListComponent />,
-	document.getElementById('ingredient-list-cont')
-);
+if(cs.isDevMode('ingredient_list')) {
+	ReactDOM.render(
+		<IngredientList />,
+		document.getElementById('cont-ingredient_list')
+	);
+}

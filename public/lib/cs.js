@@ -1,4 +1,7 @@
 var cs = {
+	DEVELOPMENT: {
+		mode: false
+	},
 	log: function(text){
 		console.log(text);
 	},
@@ -65,5 +68,8 @@ var cs = {
 		else {
 			return null;
 		}
+	},
+	isDevMode: function(componentName) {
+		return this.DEVELOPMENT.mode && this.DEVELOPMENT.component === componentName;
 	}
 };

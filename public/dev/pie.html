@@ -2,17 +2,17 @@
 <html>
 	<head lang="en">
 		<meta charset="UTF-8">
-		<title>Food Selector</title>
+		<title>Pie</title>
 		<link rel="stylesheet" href="../css/common.css" />
-		<link rel="stylesheet" href="../css/food_selector.css" />
+		<link rel="stylesheet" href="../css/pie.css" />
 		<link rel="stylesheet" href="../icons/flaticon.css" />
 	</head>
 	<body>
 		<header id="header">
-			<h1>Food selector</h1>
+			<h1>Pie</h1>
 		</header>
 		<section id="main-section">
-			<div id="cont-food_selector" class="component-cont"></div>
+			<div id="cont-pie" class="component-cont"></div>
 			<div id="cont-publisher"></div>
 		</section>
 
@@ -28,29 +28,12 @@
 		<script>
 			cs.DEVELOPMENT = {
 				mode: true,
-				component: 'food_selector'
+				component: 'pie'
 			};
-			LAG 		= 500;
 			publisher 	= { data: {} };
-			cs.get		= function(url, callback) {
-				var data;
-				
-				if(url === '/foods/vegetables') data = [
-					{ id: 1, name: 'asparagus', description: 'raw' },
-					{ id: 2, name: 'broccoli', description: 'raw' },
-					{ id: 3, name: 'potato', description: 'raw' },
-					{ id: 4, name: 'tomato', description: 'raw' },
-					{ id: 5, name: 'yam', description: 'raw' }
-				];
-				else data = [];
-				
-				setTimeout(function() {
-					callback(200, data);
-				}, LAG);
-			};
 		</script>
 		
 		<script src="../js/publisher.js"></script>
-		<script src="../js/food_selector.js"></script>
+		<script src="../js/pie.js"></script>
 	</body>
 </html>

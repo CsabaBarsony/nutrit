@@ -1,0 +1,67 @@
+.food_selector-category {
+	float: left;
+	width: 290px;
+	background-color: inherit;
+	padding: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 2px solid #8FE67F;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.food_selector-category:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.food_selector-category:hover {
+	background-color: #D1FFC8;
+}
+
+.food_selector-category > div {
+	height: 22px;
+}
+
+.food_selector-category > div:nth-child(1) {
+	float: left;
+	width: 20px;
+	margin-top: -5px;
+}
+
+.food_selector-category > div:nth-child(1) > i::before {
+	margin: 0 5px;
+	font-size: 30px;
+}
+
+.food_selector-category > div:nth-child(2) {
+	text-align: center;
+}
+
+.food_selector-list,
+.food_selector-controls {
+	display: table-row;
+}
+
+.food_selector-controls {
+	border-top: 1px solid red;
+}
+
+.food_selector-controls > button {
+	margin-top: 20px;
+}
+
+.food_selector-ingredient {
+	width: 100%;
+	border-bottom: 1px dotted #8FE67F;
+	padding-top: 10px;
+	height: 60px;
+}
+
+.food_selector-ingredient > button {
+	width: 150px;
+	float: right;
+}

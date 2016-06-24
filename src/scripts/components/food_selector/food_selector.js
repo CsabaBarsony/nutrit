@@ -1,5 +1,5 @@
-var foodCategories = require('../../food_categories.js');
-var Utils = require('./food_selector_utils.js');
+var foodCategories	= require('../../food_categories.js');
+var Utils			= require('./food_selector_utils.js');
 
 var FoodSelector = React.createClass({
 	getInitialState: function() {
@@ -14,7 +14,7 @@ var FoodSelector = React.createClass({
 		
 		if(this.state.selectedFoodCategory.sub) {
 			list = _.map(this.state.selectedFoodCategory.sub, function(category) {
-				return (<FoodCategory category={category} key={category.id} selectCategory={this.selectCategory} />);
+				return (<Category category={category} key={category.id} selectCategory={this.selectCategory} />);
 			}, this);
 		}
 		else {
@@ -27,8 +27,8 @@ var FoodSelector = React.createClass({
 		}
 			
 		var controls = this.state.selectedFoodCategory.root ? null : (
-			<div className="food-selector-controls">
-				<button className="food-category" onClick={this.backButtonClick}>
+			<div className="food_selector-controls">
+				<button className="food_selector-category" onClick={this.backButtonClick}>
 					<div>
 						<i className="flaticon-previous"></i>
 					</div>
@@ -37,7 +37,7 @@ var FoodSelector = React.createClass({
 					</div>
 				</button>
 			
-				<button className="food-category" onClick={this.rootButtonClick}>
+				<button className="food_selector-category" onClick={this.rootButtonClick}>
 					<div>
 						<i className="flaticon-refresh"></i>
 					</div>
@@ -50,7 +50,7 @@ var FoodSelector = React.createClass({
 			
 		var content = (
 			<div>
-				<div className="food-selector-list">
+				<div className="food_selector-list">
 					{list}
 				</div>
 				{controls}
@@ -58,7 +58,7 @@ var FoodSelector = React.createClass({
 		);
 		
 		return (
-			<div className="food-selector">
+			<div className="food_selector">
 				{this.state.loading ? (<div>loading...</div>) : content}
 			</div>
 		);
@@ -110,12 +110,12 @@ var FoodSelector = React.createClass({
 	}
 });
 
-var FoodCategory = React.createClass({
+var Category = React.createClass({
 	render: function() {
 		var iconClass = 'flaticon-' + this.props.category.id;
 	
 		return (
-			<button className="food-category" onClick={this.click}>
+			<button className="food_selector-category" onClick={this.click}>
 				<div>
 					<i className={iconClass.toLowerCase()}></i>
 				</div>
@@ -133,9 +133,9 @@ var FoodCategory = React.createClass({
 var Ingredient = React.createClass({
 	render: function() {
 		return (
-			<div className="ingredient">
+			<div className="food_selector-ingredient">
 				<span>{this.props.ingredient.name}, {this.props.ingredient.description}</span>
-				<button className="food-category add-ingredient" onClick={this.add}>
+				<button className="food_selector-category" onClick={this.add}>
 					<div>
 						<i className="flaticon-add"></i>
 					</div>
@@ -151,7 +151,11 @@ var Ingredient = React.createClass({
 	}
 });
 
-ReactDOM.render(
-	<FoodSelector />,
-	document.getElementById('food-selector-cont')
-);
+module.exports = FoodSelector;
+
+if(cs.isDevMode('food_selector')) {
+	ReactDOM.render(
+		<FoodSelector />,
+		document.getElementById('cont-food_selector')
+	);
+}
