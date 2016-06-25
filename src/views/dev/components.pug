@@ -1,0 +1,15 @@
+- var page = pages.components
+
+doctype html
+html
+	head
+		title= page.name
+	body
+		header#header
+			h1= page.name
+		section#main_section
+			nav
+				ul
+					each link in page.links
+						li
+							a(href=link + '.html') #{link}

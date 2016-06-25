@@ -1,0 +1,16 @@
+doctype html
+html
+	head
+		title= page.name
+		include styles_dev.pug
+		link(rel='stylesheet', href=styleDevPath + page.name + '.css')
+	body
+		header#header
+			h1= page.name
+		section#main_section
+			div.cmp_cont(id='cont-' + page.name)
+			div.cmp_cont(id='cont-publisher')
+		include libs_dev.pug
+		script(src='../dev/' + page.name + '.js')
+		script(src='../js/publisher.js')
+		script(src=scriptDevPath + page.name + '.js')

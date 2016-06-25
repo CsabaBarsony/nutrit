@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head lang="en">
-		<meta charset="UTF-8">
-		<title>Ingredient list</title>
-		<link rel="stylesheet" href="../css/common.css" />
-		<link rel="stylesheet" href="../css/ingredient_list.css" />
-		<link rel="stylesheet" href="../icons/flaticon.css" />
-	</head>
-	<body>
-		<header id="header">
-			<h1>Ingredient list</h1>
-		</header>
-		<section id="main-section">
-			<div id="cont-ingredient_list" class="component-cont"></div>
-			<div id="cont-publisher"></div>
-		</section>
-
-		<script src="../lib/react.js"></script>
-		<script src="../lib/react-dom.js"></script>
-		<script src="../lib/lodash.js"></script>
-		<script src="../lib/stativus.js"></script>
-		<script src="../lib/async.js"></script>
-		<script src="../lib/schema-inspector.js"></script>
-		<script src="../lib/cs.js"></script>
-		<script src="../lib/bella.js"></script>
-		
-		<script>
-			cs.DEVELOPMENT = {
-				mode: true,
-				component: 'ingredient_list'
-			};
-			
-			publisher = {
-				show: true,
-				data: {
-					name: 'ingredients',
-					content: '[{"food":{"id":1,"name":"Breakfast powder","description":"Chocolate flavour","category":"egg","paleo":5,"keto":10,"enabled":1,"original_name":"Beverage, instant breakfast powder, chocolate, not reconstituted","food_group_id":1,"ndbno":"43205","measure":"1.0 tbsp","weight":7.4,"energy_v":26,"energy_m":353,"protein_v":1.47,"protein_m":19.9,"fat_v":0.1,"fat_m":1.4,"ch_v":4.9,"ch_m":66.2,"fiber_v":0,"fiber_m":0.4,"sugar_v":4.87,"sugar_m":65.8,"ca_v":21,"ca_m":285,"fe_v":0.95,"fe_m":12.82,"mg_v":17,"mg_m":228,"p_v":null,"p_m":null,"k_v":null,"k_m":null,"na_v":null,"na_m":null,"zn_v":null,"zn_m":null,"cu_v":null,"cu_m":null,"mn_v":null,"mn_m":null,"se_v":null,"se_m":null,"f_v":null,"f_m":null,"v_a_v":154,"v_a_m":2083,"v_b6_v":0.084,"v_b6_m":1.14,"v_b12_v":0.13,"v_b12_m":1.71,"v_c_v":5.7,"v_c_m":76.9,"v_d3_v":0,"v_d3_m":0,"v_e_v":0.69,"v_e_m":9.37,"v_k_v":6.7,"v_k_m":90,"fatty_a_saturated_v":0.041,"fatty_a_saturated_m":0.56,"fatty_a_mono_v":0.023,"fatty_a_mono_m":0.314,"fatty_a_poly_v":0.021,"fatty_a_poly_m":0.278,"fatty_a_trans_v":0,"fatty_a_trans_m":0,"dpa_v":null,"dpa_m":null,"dha_v":null,"dha_m":null,"cholesterol_v":null,"cholesterol_m":null,"alcohol_v":null,"alcohol_m":null,"caffeine_v":null,"caffeine_m":null},"amount":{"quantity":100,"unit":"g"}},{"food":{"id":28,"name":"Cheese","description":"cheddar","category":"dairy","paleo":5,"keto":10,"enabled":1,"original_name":"Cheese, cheddar","food_group_id":1,"ndbno":"01009","measure":"1.0 cup, diced","weight":132,"energy_v":533,"energy_m":404,"protein_v":30.19,"protein_m":22.87,"fat_v":43.97,"fat_m":33.31,"ch_v":4.08,"ch_m":3.09,"fiber_v":0,"fiber_m":0,"sugar_v":0.63,"sugar_m":0.48,"ca_v":937,"ca_m":710,"fe_v":0.18,"fe_m":0.14,"mg_v":36,"mg_m":27,"p_v":null,"p_m":null,"k_v":null,"k_m":null,"na_v":null,"na_m":null,"zn_v":null,"zn_m":null,"cu_v":null,"cu_m":null,"mn_v":null,"mn_m":null,"se_v":null,"se_m":null,"f_v":null,"f_m":null,"v_a_v":1639,"v_a_m":1242,"v_b6_v":0.087,"v_b6_m":0.066,"v_b12_v":1.45,"v_b12_m":1.1,"v_c_v":0,"v_c_m":0,"v_d3_v":0.8,"v_d3_m":0.6,"v_e_v":0.94,"v_e_m":0.71,"v_k_v":3.2,"v_k_m":2.4,"fatty_a_saturated_v":24.904,"fatty_a_saturated_m":18.867,"fatty_a_mono_v":12.205,"fatty_a_mono_m":9.246,"fatty_a_poly_v":1.876,"fatty_a_poly_m":1.421,"fatty_a_trans_v":1.21,"fatty_a_trans_m":0.917,"dpa_v":null,"dpa_m":null,"dha_v":null,"dha_m":null,"cholesterol_v":null,"cholesterol_m":null,"alcohol_v":null,"alcohol_m":null,"caffeine_v":null,"caffeine_m":null},"amount":{"quantity":200,"unit":"g"}}]'
-				}
-			};
-		</script>
-		<script src="../js/publisher.js"></script>
-		<script src="../js/ingredient_list.js"></script>
-	</body>
+  <head>
+    <title>ingredient_list</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/food_selector.css">
+    <link rel="stylesheet" href="../css/ingredient_list.css">
+    <link rel="stylesheet" href="../icons/flaticon.css">
+    <link rel="stylesheet" href="../css/ingredient_list.css">
+  </head>
+  <body>
+    <header id="header">
+      <h1>ingredient_list</h1>
+    </header>
+    <section id="main_section">
+      <div class="cmp_cont" id="cont-ingredient_list"></div>
+      <div class="cmp_cont" id="cont-publisher"></div>
+    </section>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/lodash.js"></script>
+    <script src="../lib/stativus.js"></script>
+    <script src="../lib/async.js"></script>
+    <script src="../lib/schema-inspector.js"></script>
+    <script src="../lib/cs.js"></script>
+    <script src="../lib/bella.js"></script>
+    <script src="../dev/ingredient_list.js"></script>
+    <script src="../js/publisher.js"></script>
+    <script src="../js/ingredient_list.js"></script>
+  </body>
 </html>

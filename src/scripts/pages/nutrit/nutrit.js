@@ -14,5 +14,5 @@ var Nutrit = React.createClass({
 
 ReactDOM.render(
 	<Nutrit />,
-	document.getElementById('cont_nutrit')
+	document.getElementById('cont-nutrit')
 );
