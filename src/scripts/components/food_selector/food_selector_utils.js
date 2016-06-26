@@ -12,7 +12,6 @@ var foodSelectorUtils = {
 			else return;
 		}
 	},
-	// This is the description of the findParentCategory function
 	findParentCategory: function(foodCategories, childCategoryId) {
 		if(foodCategories.sub) {
 			var searchedChild = _.find(foodCategories.sub, { id: childCategoryId });

@@ -27,10 +27,8 @@ module.exports = {
 		'ingredient_list'
 	],
 	stylePath: 'css/',
-	styleDevPath: '../css/',
 	scripts: [],
 	scriptPath: 'js/',
-	scriptDevPath: '../js/',
 	libs: [
 		'react',
 		'react-dom',
@@ -42,5 +40,5 @@ module.exports = {
 		'bella'
 	],
 	libPath: 'lib/',
-	libDevPath: '../lib/'
+	iconPath: 'icons/'
 };
