@@ -1,9 +1,34 @@
 var Pie = React.createClass({
 	componentDidMount: function() {
-		var canvas = React.findDOMNode(this.refs.canvas);
-		var ctx = canvas.getContext('2d');
-		ctx.fillStyle = '#a0c';
-		ctx.fillRect(10, 10, 50, 10);
+		var centerX = 100;
+		var centerY = 100;
+		var radius = 100;
+		var angleFat = this.props.macros.fat / 50;
+		var angleProtein = this.props.macros.protein / 50;
+		var ctx = ReactDOM.findDOMNode(this.refs.canvas).getContext('2d');
+		
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+		ctx.fillStyle = 'green';
+		ctx.fill();
+		ctx.closePath();
+		
+		ctx.fillStyle = 'blue';
+		ctx.beginPath();
+		ctx.moveTo(100, 100);
+		ctx.moveTo(200, 100);
+		ctx.arc(centerX, centerY, radius, 0, angleFat * Math.PI, false);
+		ctx.lineTo(100, 100);
+		ctx.fill();
+		ctx.closePath();
+		
+		ctx.fillStyle = 'red';
+		ctx.beginPath();
+		ctx.moveTo(100, 100);
+		ctx.arc(centerX, centerY, radius, angleFat * Math.PI, (angleFat + angleProtein) * Math.PI, false);
+		ctx.lineTo(100, 100);
+		ctx.fill();
+		ctx.closePath();
 	},
 	render: function() {
 		return (
@@ -11,7 +36,7 @@ var Pie = React.createClass({
 				<div className="pie-segment pie-ch">ch: {this.props.macros.ch}</div>
 				<div className="pie-segment pie-fat">fat: {this.props.macros.fat}</div>
 				<div className="pie-segment pie-protein">protein: {this.props.macros.protein}</div>
-				<canvas id="pie-canvas" ref="canvas" width="200" height="100"></canvas>
+				<canvas id="pie-canvas" ref="canvas" width="200" height="200"></canvas>
 			</div>
 		);
 	}
