@@ -30,7 +30,6 @@ var IngredientList = React.createClass({
 			
 		var macros = this.state.macros ? (
 			<div>
-				<Pie macros={this.state.macros} />
 				<div>ch: {this.state.macros.ch.toFixed(0)}%</div>
 				<div>fat: {this.state.macros.fat.toFixed(0)}%</div>
 				<div>protein: {this.state.macros.protein.toFixed(0)}%</div>
@@ -39,6 +38,7 @@ var IngredientList = React.createClass({
 		
 		return (
 			<div className="ingredient-list">
+				<Pie macros={this.state.macros} />
 				{foods}
 				{macros}
 			</div>

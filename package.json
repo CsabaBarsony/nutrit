@@ -18,7 +18,6 @@
     "lodash": "^4.2.1",
     "mysql": "^2.10.2",
     "react": "^15.1.0",
-    "react-chartist": "^0.10.2",
     "url": "^0.11.0",
     "vinyl-source-stream": "^1.0.0"
   },
