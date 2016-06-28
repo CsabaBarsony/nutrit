@@ -10,14 +10,13 @@ var Pie = React.createClass({
 
 		return (
 			<div className="pie">
-				canvas
+				{canvas}
 			</div>
 		);
 	},
 	drawPie: function() {
-		if(this.props.macros) {
-			// Error, did not draw canvas yet
-			var canvas = ReactDOM.findDOMNode(this.refs.canvas);
+		var canvas = ReactDOM.findDOMNode(this.refs.canvas);
+		if(canvas) {
 			var ctx = canvas.getContext('2d');
 			var centerX = 100;
 			var centerY = 100;
