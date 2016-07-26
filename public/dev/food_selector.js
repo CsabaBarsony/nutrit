@@ -7,7 +7,7 @@ publisher = { data: {} };
 cs.get = function(url, callback) {
 	var data;
 	
-	if(url === '/foods/vegetables') data = [
+	if(url === '/getfoods?id=vegetables') data = [
 		{ id: 1, name: 'asparagus', description: 'raw' },
 		{ id: 2, name: 'broccoli', description: 'raw' },
 		{ id: 3, name: 'potato', description: 'raw' },

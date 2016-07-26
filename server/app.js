@@ -91,7 +91,7 @@ let server = http.createServer(function (req, res) {
 	});
   }
   else {
-    fs.readFile('./public' + url, function (err, data) {
+    fs.readFile('../public' + url, function (err, data) {
       if (err) {
         res.writeHead(404);
         res.end();
