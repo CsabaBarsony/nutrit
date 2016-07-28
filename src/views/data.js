@@ -12,13 +12,31 @@ module.exports = {
 		pie: {
 			name: 'pie'
 		},
-		components: {
-			name: 'components',
-			links: [
-				'food_selector',
-				'ingredient_list',
-				'pie'
-			]
+		toolkit: {
+			name: 'Toolkit',
+			sections: [
+				{
+					title: 'Pages',
+					links: [
+						'index'
+					]
+				},
+				{
+					title: 'Components',
+					links: [
+						'food_selector',
+						'ingredient_list',
+						'pie'
+					]
+				},
+				{
+					title: 'Style guide',
+					links: [
+						'style_guide'
+					]
+				}
+			],
+			
 		}
 	},
 	styles: [

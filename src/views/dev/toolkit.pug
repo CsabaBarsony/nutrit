@@ -1,0 +1,17 @@
+- var page = pages.toolkit
+
+doctype html
+html
+	head
+		title= page.name
+	body
+		header#header
+			h1= page.name
+		section#main_section
+			nav
+				each section in page.sections
+					h2= section.title
+					ul
+						each link in section.links
+							li
+								a(href=link + '.html') #{link}

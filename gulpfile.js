@@ -17,9 +17,6 @@ var views		= [
 ];
 
 function handleError(error) {
-	/*console.error('Error:');
-	console.error(error.filename);
-	console.error(error.loc);*/
 	console.error(error);
 	this.emit('end');
 }
@@ -39,7 +36,7 @@ function compile() {
 	gulp.src(['src/views/**/*.pug', '!src/views/includes/*.*'])
 		.pipe(data(require('./src/views/data.js')))	.on('error', handleError)
 		.pipe(pug({ pretty: true }))				.on('error', handleError)
-		.pipe(gulp.dest('public/'))				.on('error', handleError);
+		.pipe(gulp.dest('public/'))					.on('error', handleError);
 }
 
 gulp.task('compile', function() {
