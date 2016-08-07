@@ -1,0 +1,21 @@
+- var stylePath = '../css/'
+- var scriptPath = '../js/'
+- var libPath = '../lib/'
+- var iconPath = '../icons/'
+
+doctype html
+html
+	head
+		title= page.name
+		include styles.pug
+		link(rel='stylesheet', href=stylePath + page.name + '.css')
+	body
+		header#header
+			h1= page.name
+		section#main_section
+			div.cmp_cont(id='cont-' + page.name)
+			div.cmp_cont(id='cont-publisher')
+		include libs.pug
+		script(src='../dev/' + page.name + '.js')
+		script(src='../js/publisher.js')
+		script(src=scriptPath + page.name + '.js')

@@ -35,8 +35,10 @@ module.exports = {
 						'style_guide'
 					]
 				}
-			],
-			
+			]
+		},
+		style_guide: {
+			name: 'Style guide'
 		}
 	},
 	styles: [

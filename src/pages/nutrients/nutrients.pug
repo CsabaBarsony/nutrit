@@ -1,0 +1,17 @@
+- var page = pages.nutrit
+
+doctype html
+html
+	head
+		title= page.name
+		include includes/styles.pug
+		link(rel='stylesheet', href=stylePath + page.name + '.css')
+	body
+		header#header
+			h1= page.name
+		section#main_section
+			div.cmp_cont(id='cont-' + page.name)
+		footer
+			include includes/flaticon_license.pug
+		include includes/libs.pug
+		script(src=scriptPath + page.name + '.js')

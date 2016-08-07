@@ -5,6 +5,7 @@ var babelify	= require('babelify');
 var _			= require('lodash');
 var pug			= require('gulp-pug');
 var data		= require('gulp-data');
+var sass		= require('gulp-sass');
 var scripts 	= [
 	'./src/scripts/pages/nutrit/nutrit.js',
 	'./src/scripts/components/food_selector/food_selector.js',
@@ -31,8 +32,13 @@ function compile() {
 			.pipe(source(fileName))														.on('error', handleError)
 			.pipe(gulp.dest('./public/js/'))											.on('error', handleError);
 	});
+
+	gulp.src('src/styles/**/*.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('public/css'));
 	
-	delete require.cache[require.resolve('./src/views/data.js')]
+	delete require.cache[require.resolve('./src/views/data.js')];
+
 	gulp.src(['src/views/**/*.pug', '!src/views/includes/*.*'])
 		.pipe(data(require('./src/views/data.js')))	.on('error', handleError)
 		.pipe(pug({ pretty: true }))				.on('error', handleError)
